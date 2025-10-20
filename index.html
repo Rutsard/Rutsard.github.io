@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Nexcent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: white;
+        }
+
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: auto;
+            height: 84px;
+            padding: 30px 80px;
+            background-color: white;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 24px;
+            width: 35px;
+        }
+
+        .logo span {
+            font-size: 28px;
+            font-weight: bold;
+            color: #263238;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #18191F;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4CAF50;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .login-btn {
+            padding: 10px 20px;
+            background: transparent;
+            border: none;
+            color: #4CAF50;
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+
+
+        .signup-btn {
+            padding: 10px 25px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .signup-btn:hover {
+            background-color: #45a049;
+        }
+
+        section {
+            width: auto;
+
+        }
+
+        .hero {
+            height: 599px;
+            background-color: #f5f7fa;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 96px 144px;
+            position: relative;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1;
+            width: 657px;
+            height: 192px;
+            margin-bottom: 65.5px;
+
+        }
+
+        .hero-content h1 {
+            color: #4d4d4d;
+            font-size: 58px;
+            line-height: 76px;
+        }
+
+        .hero-content span {
+            color: #4caf4f;
+            padding-top: 10px;
+
+        }
+
+        .hero-content p {
+            padding-top: 16px;
+            padding-bottom: 30px;
+            color: #717171;
+        }
+
+        .register-btn {
+            padding: 14px 32px;
+            background-color: #4CAF4F;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: backgrond-color 0.3s;
+        }
+
+        .register-btn:hover {
+            background-color: #45a049;
+        }
+
+        .hero-image img {
+            width: 391px;
+            height: 407px;
+            display: flex;
+
+        }
+
+        .dots {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 12px;
+            padding: 0px;
+            background-color: #F5F7FA;
+
+            position: absolute;
+            bottom: 16px;
+            left: 720px;
+
+
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #C4C4C4;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dot.active {
+            background-color: #4CAF4F;
+        }
+
+        .dot:hover {
+            background-color: #4CAF4F;
+        }
+
+        .client {
+            height: 270px;
+            gap: 16px;
+            padding: 40px 80px;
+            text-align: center;
+
+        }
+
+        .client h2 {
+            height: 44px;
+            line-height: 44px;
+            font-size: 36px;
+            align-content: center;
+            color: #4D4D4D;
+        }
+
+        .client p {
+            margin-top: 8px;
+            color: #717171;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .client-logo {
+            padding-top: 25px;
+            padding-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            max-width: 1152px;
+            margin: 0 auto;
+
+        }
+
+        .client-logo img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+            cursor: pointer;
+        }
+
+        .client-logo img:hover {
+            opacity: 1;
+        }
+
+        .community {
+            height: 416px;
+            gap: 16px;
+            text-align: center;
+        }
+
+        .community h2 {
+            font-size: 36px;
+            line-height: 44px;
+            color: #4D4D4D;
+        }
+
+        .community p {
+            margin-top: 8px;
+            color: #717171;
+            font-size: 16px;
+        }
+
+        .feature {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 16px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 144px;
+            padding-right: 144px;
+            margin-bottom: 42px;
+        }
+
+        .feature-card {
+            flex: 1;
+            max-width: 300px;
+            max-height: 260px;
+            text-align: center;
+
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .feature-card img {
+            width: 65px;
+            height: 56px;
+        }
+
+        .feature-card h3 {
+            font-size: 28px;
+            line-height: 36px;
+            color: #4D4D4D;
+            font-weight: 700px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400px;
+            color: #4D4D4D;
+        }
+
+        .unlock {
+            height: 433px;
+            display: flex;
+            padding-right: 144px;
+            padding-left: 144px;
+            margin-bottom: 48px;
+        }
+
+        .unlock-content {
+            width: 661px;
+            height: 268px;
+            margin-left: 49px;
+            margin-top: 82.5px;
+            margin-bottom: 82.5px;
+        }
+
+        .unlock-content h2 {
+            width: 601px;
+            font-size: 36px;
+            line-height: 44px;
+            font-weight: 600;
+            color: #4D4D4D;
+        }
+
+        .unlock-content p {
+            padding-top: 20px;
+            margin-bottom: 32px;
+            width: 601px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            color: #717171;
+        }
+
+        .learn-more-btn {
+            padding: 14px 32px;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            background-color: #4CAF4F;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .learn-more-btn:hover {
+            background-color: #45a049;
+        }
+
+        .achievement {
+            height: 288px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #F5F7FA;
+            padding: 64px 144px;
+            gap: 72px;
+            margin: 0 auto;
+        }
+        .achievement-content{
+            width: 540px;
+            height: 120px;
+            
+        }
+        .achievement-content h2{
+            font-size: 36px;
+            line-height: 44px;
+            font-weight: 600;
+            color: #4D4D4D;
+        }
+        .achievement-content span{
+            font-size: 36px;
+            line-height: 44px;
+            font-weight: 600;
+            color: #4CAF4F;
+            margin-bottom: 8px;
+        }
+        .achievement-content p{
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            color: #18191F;
+        }
+        .stat-grid{
+            display: grid;
+            width: 540px;
+            height: 160px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px 40px;
+        }
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+        .stat-content {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .stat-number {
+            font-size: 28px;
+            line-height: 36px;
+            font-weight: 700;
+            color: #4D4D4D;
+        }
+        .stat-label h3{
+            font-size: 28px;
+            line-height: 36px;
+            font-weight: 700;
+            color: #4D4D4D;
+        }
+        .stat-label p{
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            color: #717171;
+        }
+
+        .calendar {
+            height: 433.4px;
+            display: flex;
+            padding-right: 144px;
+            padding-left: 144px;
+            margin-top: 48px;
+            margin-bottom: 48px;
+        }
+        .calendar-image{
+            width: 441.5328674316406px;
+            height: 433.3990173339844px;
+        }
+        .calendar-content{
+            width: 661px;
+            height: 308px;
+            margin-left: 69.7px;
+            margin-top: 62.7px;
+            margin-bottom: 62.7px;
+        }
+        .calendar-content h2{
+            font-size: 36px;
+            font-weight: 600;
+            line-height: 44px;
+            color: #4D4D4D;
+
+        }
+        .calendar-content p{
+            padding-top: 16px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            color: #717171;
+            margin-bottom: 32px;
+        }
+
+        .customer {
+            height: 475.2px;
+            background-color: #F5F7FA;
+            padding: 32px 144px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 48px;
+        }
+        .customer-content{
+            width: 766px;
+            height: 324px;
+            margin-top: 43.6px;
+            margin-bottom: 43.6px;
+            margin-right: 78px;
+        }
+        .customer-content p{
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 500;
+            color: #717171;
+            margin-bottom: 16px;
+        }
+        .customer-name{
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 600;
+            color: #4CAF4F;
+            margin-bottom: 8px;
+        }
+        .customer-label{
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            color: #89939E;
+            margin-bottom: 32px;
+        }
+        .customer-logo{
+            width: 766px;
+            height: 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .customer-logo img{
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
+        .marketing {
+            height: 506px;
+            text-align: center;
+        }
+        .marketing h2{
+            width: 1110px;
+            height: 44px;
+            text-align: center;
+            margin-left: 165px;
+            margin-right: 165px;
+            font-size: 36px;
+            line-height: 44px;
+            font-weight: 600;
+            color: #4D4D4D  ;
+            margin-bottom: 8px;
+        }
+        .marketing p{
+            width: 628px;
+            height: 72px;
+            margin-left: 406px;
+            margin-right: 406px;
+            text-align: center  ;   
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            color: #717171 ;
+            margin-bottom: 16px; 
+        }
+        .block{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            padding-left: 144px;
+            padding-right: 144px;
+            gap: 24px;
+            width: 100%;
+            height: 366px;
+        }
+        .marketing-block{
+            width: 368px;
+            height: 366px;
+            position: relative;
+        }
+        .marketing-block img{
+            width: 100%;
+            height: 286px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .block-text{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            border: none;
+            padding: 16px;
+            background-color: #F5F7FA;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            
+        }
+        .block-text h4{
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 600;
+            color: #717171  ;
+            margin-bottom: 16px;
+        }
+        .block-text img{
+            width: 24px;
+            height: 24px;
+            padding-left: 8px;
+            padding-top: 5px;
+        }
+        .block-text a{
+            width: 285px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 600;
+            text-decoration: none;
+            text-decoration-color: none;
+            color: #4CAF4F;
+        }
+        .footer-section {
+            height: 300px;
+            margin-top: 9.41px;
+            text-align: center;
+            padding-top: 32px;
+            padding-bottom: 32px;
+            background-color: #F5F7FA;
+        }
+        .footer-section h1{
+            font-size: 64px;
+            line-height: 76px;
+            font-weight: 600;
+            color: #263238  ;
+            margin-bottom: 32px;
+        }
+        footer {
+            height: 300px;
+            background-color: #263238;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 60px;
+            padding: 64px 165px;
+            color: white;
+            align-items: start;
+            
+        }
+        .footer-left{
+            display: flex;
+            flex-direction: column;
+            width: 350px;
+            height: 189.67173767089844px;
+        }
+        .footer-logo{
+            width: 191px;
+            height: 29.671743392944336px;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+        .footer-left p{
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+            color: #F5F7FA ;
+            margin-bottom: 40px;
+        }
+        .social-icon{
+            display: flex;
+            gap: 16px;
+        }
+        .social-icons a {
+            width: 32px;
+            height: 32px;
+
+        }
+        .social-icons img {
+            width: 32px;
+            height: 32px;
+            margin-right: 16px;
+        }
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: 160px;
+            height: 200px;
+        }
+        .footer-column h3 {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 28px;
+            color: white;
+            margin-bottom: 0;
+            width: 160px;
+            height: 28px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .footer-column ul li{
+            gap: 12px;
+        }
+        .footer-column ul li a {
+            text-decoration: none;
+            color: #F5F7FA;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+        }
+        .email-subscribe {
+            position: relative;
+            width: 255px;
+            height: 40px;
+            color: #D9DBE1;
+        }
+        .email-subscribe h3{
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 600;
+        }
+        
+        .email-subscribe input {
+            width: 100%;
+            padding: 12px 50px 12px 16px;
+            border-radius: 8px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 14px;
+            outline: none;
+        }
+        
+        .email-subscribe input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .email-subscribe button {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 4px 8px;
+            transition: opacity 0.3s;
+        }
+        
+        .email-subscribe button:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            <img src="Icon.png" alt="Nexcent Logo">
+            <span>Nexcent</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#feature">Feature</a></li>
+            <li><a href="#product">Product</a></li>
+            <li><a href="#testimonial">Testimonial</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <button class="login-btn">Login</button>
+            <button class="signup-btn">Sign up</button>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>
+                Lessons and insights<br>
+                <span class="highlight">from 8 years</span>
+            </h1>
+            <p>Where to grow your business as a photographer: site or social media?</p>
+            <button class="register-btn">Register</button>
+        </div>
+        <div class="hero-image">
+            <img src="illustration.png">
+        </div>
+        <div class="dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </section>
+
+    <section class="client">
+        <h2>Our Clients</h2>
+        <p>We have working with some Fortune 500+ clients</p>
+        <div class="client-logo">
+            <img src="client1.png" alt="Client 1">
+            <img src="client2.png" alt="Client 2">
+            <img src="client3.png" alt="Client 3">
+            <img src="client4.png" alt="Client 4">
+            <img src="client5.png" alt="Client 5">
+            <img src="client6.png" alt="Client 6">
+            <img src="client7.png" alt="Client 7">
+        </div>
+    </section>
+
+    <section class="community">
+        <h2>Manage your Entire community<br> in a single system</h2>
+        <p>Who is Nextcent suitable for</p>
+
+        <div class="feature">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="membership.png" alt="Membership Icon">
+                </div>
+                <h3>Membership<br>Organisations</h3>
+                <p>Our membership management software provides full automation of membership renewals and payments</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="national.png" alt="Membership Icon">
+                </div>
+                <h3>National<br>Associations</h3>
+                <p>Our membership management software provides full automation of membership renewals and payments</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="clubs.png" alt="Membership Icon">
+                </div>
+                <h3>Clubs And<br>Groups</h3>
+                <p>Our membership management software provides full automation of membership renewals and payments</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="unlock">
+        <div class="unlock-image"><img src="Frame 35.png" alt="mobile login"></div>
+        <div class="unlock-content">
+            <h2>The unseen of spending three<br>years at Pixelgrade</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet justo ipsum.
+                Sed accumsan quam vitae est varius fringilla. Pellentesque placerat vestibulum lorem sed porta.
+                Nullam mattis tristique iaculis. Nullam pulvinar sit amet risus pretium auctor. Etiam quis massa
+                pulvinar,
+                aliquam quam vitae, tempus sem. Donec elementum pulvinar odio.
+            </p>
+            <button class="learn-more-btn">Learn more</button>
+        </div>
+    </section>
+    <section class="achievement">
+
+        <div class="achievement-content">
+            <h2>Helping a local<br><span>business reinvent itself</span></h2>
+            <p>We reached here with our hard work and dedication </p>
+        </div>
+
+        <div class="stat-grid">
+            <div class="stat-item">
+                <div class="stat-number">
+                    <img src="Vector.png" alt="Members" class="stat-icon">
+                </div>
+                <div class="stat-label">
+                    <h3>2,245,341</h3>
+                    <p>Members</p>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-number">
+                    <img src="Club.png" alt="Clubs" class="stat-icon">
+                    
+                </div>
+                <div class="stat-label">
+                    <h3>46,328</h3>
+                    <p>Clubs</p>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-number">
+                    <img src="booking.png" alt="Event Bookings" class="stat-icon">
+                    
+                </div>
+                <div class="stat-label">
+                    <h3>828,867</h3>
+                    <p>Event Bookings</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">
+                    <img src="payment.png" alt="Payments" class="stat-icon">
+                    
+                </div>
+                <div class="stat-label">
+                    <h3>1,926,436</h3>
+                    <p>Payments</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="calendar">
+        <div class="calendar-image">
+            <img src="pana.png" alt="Pana image">
+        </div>
+
+        <div class="calendar-content">
+            <h2>How to design your site footer like <br>we did</h2>
+            <p>Donec a eros justo. Fusce egestas tristique ultrices. Nam tempor, augue nec tincidunt molestie, massa
+                nunc varius arcu, at scelerisque elit erat a magna. Donec quis erat at libero ultrices mollis. In hac
+                habitasse platea dictumst. Vivamus vehicula leo dui, at porta nisi facilisis finibus. In euismod augue
+                vitae nisi ultricies, non aliquet urna tincidunt. Integer in nisi eget nulla commodo faucibus efficitur
+                quis massa.
+                Praesent felis est, finibus et nisi ac, hendrerit venenatis libero. Donec consectetur faucibus ipsum id
+                gravida.</p>
+            <button class="learn-more-btn">Learn more</button>
+        </div>
+    </section>
+    <section class="customer">
+        
+        <div class="customer-content">
+            <p>Maecenas dignissim justo eget nulla rutrum molestie. Maecenas lobortis sem dui, vel rutrum risus
+                tincidunt ullamcorper. Proin eu enim metus. Vivamus sed libero ornare, tristique quam in, gravida enim.
+                Nullam ut molestie arcu, at hendrerit elit. Morbi laoreet elit at ligula molestie, nec molestie mi
+                blandit. Suspendisse cursus tellus sed augue ultrices, quis tristique nulla sodales. Suspendisse eget
+                lorem eu turpis vestibulum pretium. Suspendisse potenti. Quisque malesuada enim sapien, vitae placerat
+                ante feugiat eget. Quisque vulputate odio neque, eget efficitur libero condimentum id. Curabitur id nibh
+                id sem dignissim finibus ac sit amet magna.</p>
+            <div class="customer-name">Tim Smith</div>
+            <div class="customer-label">British Dragon Boat Racing Association</div>
+            
+            <div class="customer-logo">
+                <img src="logo1.png" alt="Logo 1">
+                <img src="logo2.png" alt="Logo 2">
+                <img src="logo3.png" alt="Logo 3">
+                <img src="logo4.png" alt="Logo 4">
+                <img src="logo5.png" alt="Logo 5">
+                <img src="logo6.png" alt="Logo 6">
+                <span class="meet-customers">Meet all customers →</span>
+            </div>
+        </div>
+        <div class="customer-image">
+                <img src="lunga.png" alt="LungA">
+        </div>
+    </section>
+
+    <section class="marketing">
+        <h2>Caring is the new marketing</h2>
+        <p>The Nexcent blog is the best place to read about the latest membership insights, trends and more. See who's
+            joining the community, read about how our community are increasing their membership income and lot's more.​
+        </p>
+        <div class="block">
+            <div class="marketing-block">
+                <div class="marketing-block">
+                    <img src="image 18.png" alt="block1">
+                    <div class="block-text">
+                        <h4>Creating Streamlined<br> Safeguarding Processes with<br> OneRen</h4>
+                        <a href="#">Readmore <img src="Right.png"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="marketing-block">
+                <div class="marketing-block">
+                    <img src="image 19.png" alt="block2">
+                    <div class="block-text">
+                        <h4>What are your safeguarding<br> responsibilities and how can<br> you manage them?</h4>
+                        <a href="#">Readmore <img src="Right.png"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="marketing-block">
+                <div class="marketing-block">
+                    <img src="image 20.png" alt="block3">
+                    <div class="block-text">
+                        <h4>Revamping the Membership<br> Model with Triathlon<br> Australia</h4>
+                        <a href="#">Readmore <img src="Right.png"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer-section">
+        <h1>Pellentesque suscipit<br>fringilla libero eu.</h1>
+        <button class="register-btn">Get a Demo →</button>
+    </section>
+    <footer>
+        <div class="footer-left">
+            <div class="footer-logo">
+                <img src="Logo.png" alt="Nexcent Logo">
+            </div>
+            <p>Copyright © 2020 Nexcent ltd.<br>All rights reserved</p>
+            <div class="social-icons">
+                <a href="#"><img src="instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="dribbble.png" alt="Dribbble"></a>
+                <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="youtube.png" alt="YouTube"></a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Testimonials</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Support</h3>
+            <ul>
+                <li><a href="#">Help center</a></li>
+                <li><a href="#">Terms of service</a></li>
+                <li><a href="#">Legal</a></li>
+                <li><a href="#">Privacy policy</a></li>
+                <li><a href="#">Status</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Stay up to date</h3>
+            <div class="email-subscribe">
+                <input type="email" placeholder="Your email address">
+                <button type="submit">
+                    <img src="enter.png" alt="enter">
+                </button>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
